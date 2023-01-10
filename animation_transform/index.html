@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hello World test!!</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+.transform {
+    display:inline-block;
+    padding:2rem;
+    margin:1rem;
+    background:orange;
+
+    transition:1s;
+}
+
+.rotate_x:hover{ transform:rotateX(180deg); } /* ←横線を軸として回転 */
+.rotate_y:hover{ transform:rotateY(180deg); } /* ←縦線を軸として回転 */
+.rotate_z:hover{ transform:rotateZ(180deg); } /* ←通常のrotateと同じ */
+
+
+/* http://www.htmq.com/css3/transform_translate.shtml */
+.translate_x:hover{ transform:translateX(-50%); }
+.translate_y:hover{ transform:translateY(-50%); }
+
+.translate_z:hover{ transform:translateZ(-50px); }
+/* ↑単位として%が使えない。挙動の確認ができない。 https://developer.mozilla.org/ja/docs/Web/CSS/transform-function/translateZ も参照 */
+
+.translate:hover{ transform:translate(-50%, -50%); }
+
+
+
+/*
+    animation-name -> アニメーションの名前
+    animation-duration -> アニメーションの開始から終わるまでの時間（1回分）
+    animation-timing-function -> アニメーションの進捗時の効果
+    animation-delay -> アニメーションが開始するまでの時間
+    animation-iteration-count -> アニメーションの繰り返し回数
+    animation-direction -> アニメーションを逆再生（順番）
+ */
+.animation-duration-1s {
+	width: 100px;
+	height: 100px;
+	background: #00BCD4;
+
+	animation-name: animation-haniwaman;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+}
+@keyframes animation-haniwaman {
+	0% {width: 100px;}
+	100% {width: 100%;}
+}
+</style>
+
+
+
+</head>
+<body>
+
+    <div>http://www.htmq.com/css3/transform.shtml</div>
+
+    <div class="transform rotate_x">transform:rotateX(180deg);</div>
+    <div class="transform rotate_y">transform:rotateY(180deg);</div>
+    <div class="transform rotate_z">transform:rotateZ(180deg);</div>
+
+    <br>
+
+    <div class="transform translate_x">transform:translateX(-50%);</div>
+    <div class="transform translate_y">transform:translateY(-50%);</div>
+    <div class="transform translate_z">transform:translateZ(-50%);</div>
+    <div class="transform translate" >transform:translate(-50%, -50%);</div>
+
+    <br>
+
+    <h2>animation</h2>
+
+    <p>animationプロパティとkeyframeを使うことで作用する。</p>
+
+    <ul>
+        <li>https://developer.mozilla.org/ja/docs/Web/CSS/animation</li>
+        <li>https://haniwaman.com/css-animation/</li>
+    </ul>
+
+    <div class="animation-duration-1s"></div>    
+
+    <p>このように1つの簡単なアニメーションを作るだけで、かなり時間がかかってしまう。『animation CSS サンプル』で検索して好みのアニメーションを使うと良い。</p>
+
+
+</body>
+</html>
+
